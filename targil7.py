@@ -1,6 +1,5 @@
 from PIL import Image, ImageDraw
 
-# הקואורדינטות מהאתגר
 first = (
     146, 399, 163, 403, 170, 393, 169, 391, 166, 386, 170, 381, 170, 371, 170,
     355, 169, 346, 167, 335, 170, 329, 170, 320, 170, 310, 171, 301, 173, 290,
@@ -45,23 +44,17 @@ second = (
     128, 156, 134, 157, 136, 156, 136
 )
 
-# גודל התמונה
 width, height = 400, 400
 
-# יצירת תמונה חדשה ולוח ציור
 image = Image.new('RGB', (width, height), 'white')
 draw = ImageDraw.Draw(image)
 
-# ציור קווים עבור הרשימה הראשונה
 first_points = list(zip(first[0::2], first[1::2]))
 draw.line(first_points, fill='black', width=2)
 
-# ציור קווים עבור הרשימה השנייה
 second_points = list(zip(second[0::2], second[1::2]))
 draw.line(second_points, fill='black', width=2)
 
-# שמירת התמונה
 image.save('connected_dots.png')
 
-# הצגת התמונה
 image.show()
