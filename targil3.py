@@ -76,7 +76,6 @@ def main():
         Dragon("Lizzy", 1450)
     ]
 
-    # הוספת החיות החדשות לרשימה
     new_animals = [
         Dog("Doggo", 80),
         Cat("Kitty", 80),
@@ -87,14 +86,12 @@ def main():
 
     zoo_lst.extend(new_animals)
 
-    # האכלה והדפסה
     for animal in zoo_lst:
         if animal.is_hungry():
             print(f"{animal.__class__.__name__} {animal.get_name()}")
             while animal.is_hungry():
                 animal.feed()
         animal.talk()
-        # קריאה למתודה הייחודית
         if isinstance(animal, Dog):
             animal.fetch_stick()
         elif isinstance(animal, Cat):
@@ -106,7 +103,6 @@ def main():
         elif isinstance(animal, Dragon):
             animal.breath_fire()
 
-    # הדפסת שם גן החיות
     print(Animal.zoo_name)
 
 main()
